@@ -1,0 +1,253 @@
+.nav {
+  line-height: 3;
+  color: #808080;
+  margin: 1em 1.36rem 0;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .current {
+  color: #222;
+  border-bottom: 1px solid #ff3167;
+}
+
+.tips {
+  margin: .65rem 1.36rem 0;
+  font-size: .24rem;
+  color: #808080;
+  line-height: 1.2;
+}
+
+.tips::before {
+  content: '!';
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  vertical-align: middle;
+  width: .3rem;
+  height: .3rem;
+  background-color: #ff3167;
+  color: #fff;
+  border-radius: 50%;
+  transform: scale(.9) translateX(-50%);
+}
+
+.phone {
+  color: #f5f5f5;
+}
+
+.phone::before {
+  content: '+86';
+  position: absolute;
+  color: #808080;
+  line-height: .38rem;
+  border-right: 1px solid #dedede;
+  font-size: .24rem;
+  width: 1.1rem;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.phone::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  top: 0;
+  left: 1.3rem;
+  background-color: #fff;
+  z-index: 1;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pwdphone::after {
+  left: auto;
+  right: 1.3rem;
+}
+
+.input {
+  width: 100%;
+  font-size: .26rem;
+  height: .8rem;
+  line-height: 1.2em;
+  color: #000;
+  border-radius: .4rem;
+  color: #000;
+  border: 1px solid #f5f5f5 !important;
+  box-sizing: border-box;
+}
+
+.phone input {
+  padding-left: 1.3rem;
+}
+
+.phone input:focus {
+  outline: none;
+}
+
+.phone > button.clear {
+  font-size: .4rem;
+  width: .4rem;
+  height: .4rem;
+  line-height: 0;
+  right: calc(.5rem - .5em);
+  background-color: transparent;
+  border: none;
+  color: #d1d1d1;
+  padding: .5em;
+  font-weight: 200;
+  box-sizing: content-box;
+  background-image: radial-gradient(transparent 0rem,
+  transparent .17rem,
+  #d3d3d3 .17rem,
+  #d3d3d3 .19rem,
+  transparent .19rem,
+  transparent 100%);
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+.clear::before {
+  content: '';
+  display: inline-block;
+  width: 0px;
+  height: .4rem;
+  vertical-align: -.1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.phone .clear,
+.code .btn,
+.code .limit,
+.password img {
+  position: absolute;
+  right: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.code .btn {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ff3167;
+  background: #ff3167;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 2em;
+  vertical-align: middle;
+  line-height: 2;
+  padding: 0 .48rem;
+}
+
+.code,
+.phone,
+.password,
+.login,
+.auth_value {
+  display: block;
+  margin: 0 .8rem;
+  position: relative;
+}
+
+.code,
+.password {
+  margin-top: .15rem;
+}
+
+.code .limit {
+  border: 1px solid #f5f5f5;
+  font-size: .24rem;
+  color: #808080;
+  padding: 0 1.5em;
+  line-height: 2;
+  border-radius: 2em;
+  transform-origin: right;
+  transform: translateY(-50%);
+}
+
+.phone {
+  margin-top: .34rem;
+}
+
+.code input,
+.password input,
+.auth_value input {
+  padding-left: .35rem;
+}
+
+.password img {
+  width: .34rem;
+  padding: 1em;
+  margin-right: -1em;
+}
+
+.login {
+  display: block;
+  height: .84rem;
+  background-color: #f5f5f5;
+  border: none;
+  width: 5.9rem;
+  border-radius: .4rem;
+  color: #ccc;
+  font-size: .3rem;
+  letter-spacing: 2px;
+  margin-top: .3rem;
+}
+
+.login:focus {
+  outline: none;
+}
+
+.login_success {
+  background-color: #ff3167;
+  color: #fff;
+}
+
+.agreements {
+  text-align: center;
+  font-size: .24rem;
+  color: #808080;
+  margin-top: 1em;
+}
+
+.agreements a {
+  color: #ff3167;
+}
+
+.auth_value {
+  margin-top: .15rem;
+  height: .9rem;
+  overflow: hidden;
+}
+
+.auth_value img,
+.auth_value div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.auth_value img {
+  position: absolute;
+  top: .1rem;
+  width: 2.3rem;
+  height: .9rem;
+  border-radius: 3px;
+  background-color: #efeff4;
+}
+
+.auth_value div {
+  float: right;
+  box-sizing: border-box;
+  padding-top: .1rem;
+  height: .9rem;
+  width: 3.3rem;
+}

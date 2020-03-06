@@ -1,5 +1,8 @@
-body {
-    min-height: 100vh;
-    background-color: #200932;
-    padding-bottom: 1em;
+.header {
+  height: .76rem;
+  background-color: #ff3167;
+  text-align: center;
+  font-size: .3rem;
+  line-height: .76rem;
+  color: #fff;
 }
