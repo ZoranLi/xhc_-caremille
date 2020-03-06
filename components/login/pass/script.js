@@ -63,7 +63,7 @@ export default{
             if(resp.code !== '0'){
                 this.reload_pass_auth_code()
                 return __tostal(resp.msg || '发送验证码错误')
-            } 
+            }
 
             this.canSend = false
             
@@ -92,7 +92,7 @@ export default{
         },
         async reload_pass_auth_code(){
             this.auth_value = ''
-            let resp = await this.$axios.get('/user/v1/get_verify_code')
+            let resp = await this.$axios.get('https://test1.xiaohongchun.com/user/v1/get_verify_code')
                 resp = resp.data
             if (resp.code) return __tostal(resp.msg || '获取失败了。。。')
             this.pass_auth_code = resp.data

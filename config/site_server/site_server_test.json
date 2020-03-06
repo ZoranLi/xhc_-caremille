@@ -1,0 +1,10 @@
+{
+    "store": "https://static.xiaohongchun.com",
+    "napi": "https://test1.xiaohongchun.com",
+    "trunk": "https://trunk.xiaohongchun.com",
+    "focus": "",
+    "poster": "http://h5test.tiantiandr.cn",
+    "appid":{
+        "pay_hy": "wxfece69d11a091603"
+    }
+}

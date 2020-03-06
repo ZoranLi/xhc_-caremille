@@ -1,0 +1,10 @@
+{
+    "store": "https://static.xiaohongchun.com",
+    "napi": "https://napi.xiaohongchun.com",
+    "trunk": "https://www.xiaohongchun.com",
+    "focus": "",
+    "poster": "https://static.xiaohongchun.com",
+    "appid":{
+        "pay_hy": "wx59154d3fbc834343"
+    }
+}
