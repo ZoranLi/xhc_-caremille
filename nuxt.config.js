@@ -12,7 +12,10 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
+    ],
+    script: process.env.NUXT_ENV_APP_ENV == 'production' ? [] : [
+      { src: 'https://s.xiaohongchun.com/js/lib/eruda.min.js' }
     ]
   },
   /*
@@ -29,6 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,6 +45,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'cookie-universal-nuxt',
   ],
   /*
   ** Axios module configuration

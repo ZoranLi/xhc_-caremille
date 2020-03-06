@@ -5,7 +5,8 @@
   "author": "zoranlee",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NODE_ENV=development NUXT_ENV_APP_ENV=test nuxt",
+    "production": "NODE_ENV=production nuxt build",
     "build": "nuxt build",
     "start": "nuxt start",
     "server": "node server/index.js",
@@ -13,14 +14,17 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "cookie-universal-nuxt": "^2.1.2",
     "cross-env": "^7.0.2",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
     "lodash": "^4.17.15",
+    "md5": "^2.2.1",
     "nodemon": "^2.0.2",
     "nuxt": "^2.0.0",
     "pinyin": "^2.9.0",
     "top-domain": "^0.0.6",
+    "url": "^0.11.0",
     "xhc-auth": "^1.0.1"
   },
   "devDependencies": {}

@@ -41,10 +41,14 @@ export default {
         param.wechat_open_id = _query.wechat_open_id
       }
       
+      
+      
       let resp = await this.$axios.post('focus::/login_bind_mobile', param)
       resp = resp.data
       
       if(resp.code !== 0) return __tostal(resp.msg || '绑定手机号时出错了，请联系客服。')
+      
+      //TODO 处理接口返回信息，将用户信息存储在cookie上
       
       location.href = this.query.redirect || '/'
     },
