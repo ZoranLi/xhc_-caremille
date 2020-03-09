@@ -3,9 +3,10 @@ import pass from '~/components/login/pass/index.vue'
 const defaultRedirect = `/`
 
 export default {
-  async asyncData({$axios, query, store}) {
+  async asyncData({$axios, query,req, store}) {
     return {
       query,
+      host : req.headers.host
     }
   },
   data() {
@@ -36,7 +37,7 @@ export default {
           'xhc_hashTimes':resp['hashTimes']};
           Object.keys(auth).forEach(function(key){
             that.$cookies.set(key, auth[key], {
-              domain: `${document.domain}`,
+              domain: `${this.host}`,
               expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
               httpOnly: false
             });
