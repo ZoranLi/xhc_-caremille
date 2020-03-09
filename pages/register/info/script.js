@@ -30,7 +30,11 @@ export default {
     }
   },
   components: {},
-  methods: {},
+  methods: {
+    submit() {
+    
+    }
+  },
   mounted() {
   }
 };
