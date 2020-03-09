@@ -6,13 +6,14 @@ function fn_post(ctx, url) {
         
         let original_domain = host.split('.')
             original_domain = `.${original_domain[1]}.${original_domain[2]}`
-           
-        axios.post(`${url}`,
+  
+      console.log(ctx.request);
+      axios.post(`${url}`,
                 JSON.parse(ctx.rawbody.toString()), {
                     headers: {
                         original_domain,
                     },
-                }).then(function (res) {
+                },).then(function (res) {
                 if (res.headers['set-cookie']) {
                     ctx.append('set-cookie', res.headers['set-cookie'])
                 }

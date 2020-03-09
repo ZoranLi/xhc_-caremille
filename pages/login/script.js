@@ -12,7 +12,7 @@ export default {
     return {
       title: '登录',
       redirect: '',
-      bind_mobile:true
+      bind_mobile: true
     }
   },
   
@@ -20,15 +20,30 @@ export default {
   
   methods: {
     async bindmobile(phone, code) {
+      let that = this;
       let _query = this.query;
       let param = {
         mobile: phone.toString().trim(),
         iden_code: code.toString().trim(),
         device_id: Date.now(),
       }
-      let resp = await this.$axios.post('focus::/codeLogin', param)
+      let resp = await this.$axios.$post('focus::/codeLogin', param)
       resp = resp.data
-      if (resp.code !== 0) return __tostal(resp.msg || '登录出错，请联系客服。')
+      if (resp) {
+        let auth =
+          {'xhc_token': resp['token'],
+          'xhc_prefix':resp['prefix'],
+          'xhc_hashTimes':resp['hashTimes']};
+          Object.keys(auth).forEach(function(key){
+            that.$cookies.set(key, auth[key], {
+              domain: `${document.domain}`,
+              expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+              httpOnly: false
+            });
+          });
+      } else {
+        return __tostal(resp.msg || '登录出错，请联系客服。')
+      }
       location.href = this.query.redirect || '/'
     },
     hidemodal() {

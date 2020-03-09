@@ -34,6 +34,9 @@ module.exports = {
   plugins: [
     '@/plugins/axios'
   ],
+  router: {
+    middleware: ['mtype']
+  },
   /*
   ** Nuxt.js dev-modules
   */

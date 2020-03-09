@@ -3,10 +3,7 @@ const consola = require('consola')
 const logger = require('./middleware/logger')
 const blacklist = require('./middleware/blacklist')
 const { Nuxt, Builder } = require('nuxt')
-
-const { login } = require('xhc-auth')
 const { sites } = require('./sites')
-const { appOpts } = require('../config/app')
 
 const app = new Koa()
 const routers = require('./router')
@@ -31,21 +28,6 @@ async function start() {
 
     app.use(routers.routes()).use(routers.allowedMethods());
 
-    app.use(login({
-        appName: appOpts.appName,
-        appid: appOpts.appid,
-        baseURL: sites.napi,
-        
-        exclude: ctx => {
-            if (ctx.isResource) { return true }
-            if (ctx.path == '/login') { return true }
-            if (ctx.path == '/upgrading') { return true }
-            if (ctx.path.includes('propagation')) { return true }
-            if (ctx.path.includes('/favicon.ico')) { return true }
-            return false
-        }
-    }))
-
     const nuxt = new Nuxt(config)
 
     const host = process.env.HOST || '127.0.0.1'
@@ -58,7 +40,7 @@ async function start() {
     } else {
         await nuxt.ready()
     }
-
+  
     function render(req, res) {
         return new Promise((resolve, reject) => {
             res.on('close', resolve)
@@ -74,8 +56,6 @@ async function start() {
 
         ctx.status = 200
         ctx.req.ctx = ctx
-
-        console.log(ctx.href)
 
         await render(ctx.req, ctx.res)
 
