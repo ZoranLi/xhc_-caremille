@@ -1,0 +1,11 @@
+<div :class="$style.mian">
+  <div :class="$style.header">
+    {{ title }}
+  </div>
+
+  <label :class="$style.password">
+    <input v-model="password" :class="$style.input" tabindex="2" autocomplete="off" type="text" placeholder="请输入密码">
+    <img @click="visible=!visible" :src="visible ? icons[1] : icons[0]">
+  </label>
+
+</div>
