@@ -1,3 +1,14 @@
 <div>
-  <p :class="$style.name">测试</p>
+  <ul>
+    <li v-for="(image,key) in imageList">
+      <div :class='$style.template_image' :data-src="image | optimize('small3x')"></div>
+    </li>
+  </ul>
+
+  <van-tabbar v-model="active" active-color="#ff3167" inactive-color="#000">
+    <van-tabbar-item name="home" :icon="active==='home' ? icon.active : icon.inactive">商城</van-tabbar-item>
+    <van-tabbar-item name="search" :icon="active==='search'? icon.active : icon.inactive">分类</van-tabbar-item>
+    <van-tabbar-item name="friends" :icon="active==='friends' ? icon.active : icon.inactive">购物袋</van-tabbar-item>
+    <van-tabbar-item name="setting" :icon="active==='setting' ? icon.active : icon.inactive">我的</van-tabbar-item>
+  </van-tabbar>
 </div>
