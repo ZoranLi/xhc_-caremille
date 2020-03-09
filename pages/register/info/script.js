@@ -6,13 +6,14 @@ export default {
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
   },
   data() {
     return {
       title: '注册VIP账号',
-      password:''
+      realName: '',
+      storeName: '',
     }
   },
   components: {

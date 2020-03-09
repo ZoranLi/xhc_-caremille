@@ -1,7 +1,7 @@
 export default {
   data() {
     return {
-      title: '珂曼'
+      title: '珂曼',
     }
   },
   head() {
