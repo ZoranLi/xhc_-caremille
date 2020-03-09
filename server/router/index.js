@@ -20,8 +20,6 @@ router.get(mpReg, async (ctx) => {
     ctx.body = matcher[1]
 });
 
-
-
 router.post('/login', async (ctx, next) => {
     let resp = await proxy.fn_post(ctx, `${baseURL}/user/login/v2`)
     ctx.body = resp.res.data

@@ -39,12 +39,9 @@ async function start() {
         exclude: ctx => {
             if (ctx.isResource) { return true }
             if (ctx.path == '/login') { return true }
-            if (ctx.path == '/contracts/download') { return true }
-            if (ctx.path == '/joinus') { return true }
             if (ctx.path == '/upgrading') { return true }
             if (ctx.path.includes('propagation')) { return true }
             if (ctx.path.includes('/favicon.ico')) { return true }
-
             return false
         }
     }))
