@@ -1,11 +1,12 @@
 <div>
-  <store v-if="active === 'home'"/>
+  <store v-if="active === 'tab_store'"/>
+  <category v-if="active === 'tab_category'"/>
 
 
   <van-tabbar v-model="active" active-color="#ff3167" inactive-color="#000">
-    <van-tabbar-item name="home" :icon="active==='home' ? icon.active : icon.inactive">商城</van-tabbar-item>
-    <van-tabbar-item name="search" :icon="active==='search'? icon.active : icon.inactive">分类</van-tabbar-item>
-    <van-tabbar-item name="friends" :icon="active==='friends' ? icon.active : icon.inactive">购物袋</van-tabbar-item>
-    <van-tabbar-item name="setting" :icon="active==='setting' ? icon.active : icon.inactive">我的</van-tabbar-item>
+    <van-tabbar-item name="tab_store" :icon="active==='tab_store' ? icon.active : icon.inactive">商城</van-tabbar-item>
+    <van-tabbar-item name="tab_category" :icon="active==='tab_category'? icon.active : icon.inactive">分类</van-tabbar-item>
+    <van-tabbar-item name="tab_cart" :icon="active==='tab_cart' ? icon.active : icon.inactive">购物袋</van-tabbar-item>
+    <van-tabbar-item name="tab_mine" :icon="active==='tab_mine' ? icon.active : icon.inactive">我的</van-tabbar-item>
   </van-tabbar>
 </div>
