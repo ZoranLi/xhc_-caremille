@@ -1,9 +1,6 @@
 <div>
-  <ul>
-    <li v-for="(image,key) in imageList">
-      <div :class='$style.template_image' :data-src="image | optimize('small3x')"></div>
-    </li>
-  </ul>
+  <store v-if="active === 'home'"/>
+
 
   <van-tabbar v-model="active" active-color="#ff3167" inactive-color="#000">
     <van-tabbar-item name="home" :icon="active==='home' ? icon.active : icon.inactive">商城</van-tabbar-item>
