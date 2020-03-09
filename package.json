@@ -5,7 +5,7 @@
   "author": "zoranlee",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development NUXT_ENV_APP_ENV=test nuxt",
+    "dev": "NODE_ENV=development NUXT_ENV_APP_ENV=test nodemon server/index.js --watch server",
     "production": "NODE_ENV=production nuxt build",
     "build": "nuxt build",
     "start": "nuxt start",
