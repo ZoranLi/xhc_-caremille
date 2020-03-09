@@ -27,6 +27,11 @@ router.post('/login', async (ctx, next) => {
     ctx.body = resp.res.data
 });
 
+router.post('/codeLogin', async (ctx, next) => {
+  let resp = await proxy.fn_post(ctx, `${baseURL}/user/register/iden`)
+  ctx.body = resp.res.data
+});
+
 router.post('/v2/user/third_account/register', async (ctx) => {
 
     const resp = await axios.post(sites.napi + ctx.path, JSON.parse(ctx.rawbody.toString()), {

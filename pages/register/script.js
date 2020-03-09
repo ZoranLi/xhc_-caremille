@@ -27,29 +27,11 @@ export default {
         mobile: phone.toString().trim(),
         iden_code: code.toString().trim(),
         device_id: Date.now(),
-        access_token: _query.access_token,
-        source: _query.source,
-        open_id: _query.open_id,
-        union_id: _query.union_id,
-        nick: _query.nick,
-        icon: _query.icon,
-        sex: _query.sex,
       }
       
-      if(_query.project && _query.wechat_open_id){
-        param.project = _query.project
-        param.wechat_open_id = _query.wechat_open_id
-      }
-      
-      
-      
-      let resp = await this.$axios.post('focus::/login_bind_mobile', param)
+      let resp = await this.$axios.post('focus::/codeLogin', param)
       resp = resp.data
-      
-      if(resp.code !== 0) return __tostal(resp.msg || '绑定手机号时出错了，请联系客服。')
-      
-      //TODO 处理接口返回信息，将用户信息存储在cookie上
-      
+      if(resp.code !== 0) return __tostal(resp.msg || '登录出错，请联系客服。')
       location.href = this.query.redirect || '/'
     },
     hidemodal(){
@@ -59,7 +41,7 @@ export default {
       location.href = '//ul.xiaohongchun.com/params?goods=0'
     },
     back(){
-      location.href = `/login`
+      location.href = `/register`
     }
   },
   
