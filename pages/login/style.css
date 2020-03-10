@@ -1,8 +1,10 @@
 .header {
   height: .76rem;
-  background-color: #ff3167;
-  text-align: center;
-  font-size: .3rem;
+  text-align: left;
+  padding-left: .82rem;
+  margin-top: 2.6rem;
+  font-weight: bold;
+  font-size: .36rem;
   line-height: .76rem;
-  color: #fff;
+  color: #191919;
 }

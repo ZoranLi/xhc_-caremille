@@ -5,34 +5,35 @@
 	        <li @click="type='password'" :class="type==='password' ? $style.current : ''">普通密码登录</li>
 	    </ul>
 	</nav>
-	
+
 	<label :class="[$style.phone, type === 'password' ? $style.pwdphone : '']">
 	    <input v-model="phone" autocomplete="off" tabindex="1" :class="$style.input" placeholder="请输入手机号码" type="text" pattern="[0-9]*">
 	    <button v-if="phone" @click="phone=''" :class="$style.clear">&times;</button>
 	</label>
-	
+
 	<template v-if="type=='code'" >
 		<div :class="$style.auth_value">
 			<img :src="pass_auth_code.image" @click="reload_pass_auth_code">
+      <span @click="reload_pass_auth_code" @touchmove.prevent>换一组</span>
 			<div>
 				<input v-model="auth_value" type="text" ref="auth_value" :class="$style.input" autocomplete="off" tabindex="2" pattern="[0-9]*" placeholder="请输入计算结果">
 			</div>
 		</div>
-		
+
 		<div :class="$style.code">
 		    <input v-model="code" type="text" ref="input" pattern="[0-9]*" :class="$style.input" autocomplete="off" tabindex="3" placeholder="请输入验证码">
 			<span @click="sendCode" v-if="canSend" :class="$style.btn" class="btn btn-small">获取验证码</span>
-			<span v-else :class="$style.limit">{{number}}s后重新发送</span>		
+			<span v-else :class="$style.limit">{{number}}s后重新发送</span>
 		</div>
 	</template>
-	
+
 	<label v-if="type=='password'" :class="$style.password">
 	    <input v-if="visible" v-model="password" :class="$style.input" tabindex="2" autocomplete="off" type="text" placeholder="请输入密码">
 	    <input v-else v-model="password" :class="$style.input" tabindex="2" autocomplete="off" type="password" placeholder="请输入密码">
 	    <img @click="visible=!visible" :src="visible ? icons[1] : icons[0]">
 	</label>
-	
+
 	<button @click="submitMsg" :class="[$style.login, allFilled ? $style.login_success : '']">{{bind_mobile ? '完成' : '登录'}}</button>
-	
+
 	<bottom_option v-if="bind_mobile" :desc="'该手机号已经建立账号无法绑定'" :desc_confirm="'联系客服'" :show_option="show_option" @option_confirm="option_confirm" @option_cancel="option_cancel"></bottom_option>
 </div>

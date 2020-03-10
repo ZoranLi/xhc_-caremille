@@ -35,6 +35,10 @@
   transform: scale(.9) translateX(-50%);
 }
 
+::placeholder {
+  color: #cccccc;
+}
+
 .phone {
   color: #f5f5f5;
 }
@@ -42,7 +46,7 @@
 .phone::before {
   content: '+86';
   position: absolute;
-  color: #808080;
+  color: #cccccc;
   line-height: .38rem;
   border-right: 1px solid #dedede;
   font-size: .24rem;
@@ -77,9 +81,7 @@
   height: .8rem;
   line-height: 1.2em;
   color: #000;
-  border-radius: .4rem;
-  color: #000;
-  border: 1px solid #f5f5f5 !important;
+  border-bottom: 1px solid #f5f5f5 !important;
   box-sizing: border-box;
 }
 
@@ -103,12 +105,6 @@
   padding: .5em;
   font-weight: 200;
   box-sizing: content-box;
-  background-image: radial-gradient(transparent 0rem,
-  transparent .17rem,
-  #d3d3d3 .17rem,
-  #d3d3d3 .19rem,
-  transparent .19rem,
-  transparent 100%);
   background-origin: content-box;
   background-repeat: no-repeat;
 }
@@ -138,14 +134,12 @@ input:focus {
 .code .btn {
   display: inline-block;
   text-align: center;
-  border: 1px solid #ff3167;
-  background: #ff3167;
-  color: #fff;
+  border: 1px solid #d95338;
+  color: #d95338;
   font-size: 12px;
-  border-radius: 2em;
   vertical-align: middle;
   line-height: 2;
-  padding: 0 .48rem;
+  padding: 0 .22rem;
 }
 
 .code,
@@ -225,7 +219,7 @@ input:focus {
 
 .auth_value {
   margin-top: .15rem;
-  height: .9rem;
+  height: 1.2rem;
   overflow: hidden;
 }
 
@@ -242,6 +236,15 @@ input:focus {
   height: .9rem;
   border-radius: 3px;
   background-color: #efeff4;
+}
+
+.auth_value span {
+  font-size: .2rem;
+  color: #d95338;
+  z-index: 2;
+  position: absolute;
+  top: 0.85rem;
+  left: 1.3rem;
 }
 
 .auth_value div {

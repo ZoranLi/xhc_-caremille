@@ -11,7 +11,7 @@ export default {
   },
   data() {
     return {
-      title: '登录',
+      title: '注册VIP账号',
       redirect: '',
       bind_mobile: true
     }
