@@ -1,7 +1,4 @@
-<div :class="$style.mian">
-  <div :class="$style.header">
-    {{ title }}
-  </div>
+<div :class="$style.container">
 
   <div :class="$style.info_container">
     <label>
@@ -16,11 +13,8 @@
       <input type="text" v-model="contactAddress" placeholder="请填写联系地址">
     </label>
 
-    <div :class="$style.drop_down_selection">
-      <van-dropdown-menu active-color="#ee0a24">
-        <van-dropdown-item v-model="optionValue" :options="options"/>
-      </van-dropdown-menu>
-    </div>
+    <p>请选择分销渠道 <span></span></p>
+
 
     <button @click="submit">提交审核</button>
 
