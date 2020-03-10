@@ -14,11 +14,11 @@ export default {
       realName: '',
       storeName: '',
       contactAddress: '',
-      showChannel:false,
+      showChannel: false,
       optionValue:
         {
-          text:'请选择分销渠道',
-          value:''
+          text: '请选择分销渠道',
+          value: ''
         },
       options: [
         {text: '淘宝', value: 'TB'},
@@ -43,6 +43,9 @@ export default {
       }
       if (!this.storeName) {
         return __tostal('请填写店铺名称');
+      }
+      if (this.storeName.length < 4) {
+        return __tostal('店铺名称最小长度为4个字符');
       }
       if (!this.contactAddress) {
         return __tostal('请填写联系地址');
