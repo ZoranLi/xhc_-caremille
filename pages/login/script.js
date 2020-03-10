@@ -31,13 +31,15 @@ export default {
       let resp = await this.$axios.$post('focus::/codeLogin', param)
       resp = resp.data
       if (resp) {
+        let original_domain = this.host.split('.')
+        original_domain = `.${original_domain[1]}.${original_domain[2]}.${original_domain[3]}`
         let auth =
           {'xhc_token': resp['token'],
           'xhc_prefix':resp['prefix'],
           'xhc_hashTimes':resp['hashTimes']};
           Object.keys(auth).forEach(function(key){
             that.$cookies.set(key, auth[key], {
-              domain: `${this.host}`,
+              domain: `${original_domain}`,
               expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
               httpOnly: false
             });

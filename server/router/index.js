@@ -27,7 +27,6 @@ router.post('/login', async (ctx, next) => {
 });
 
 router.post('/codeLogin', async (ctx, next) => {
-  removeCookies()
   let resp = await proxy.fn_post(ctx, `${baseURL}/user/register/iden`)
   ctx.body = resp.res.data
 });
