@@ -17,20 +17,18 @@ export default async function ({isServer, store, req, query, $axios, redirect}) 
   
   let resp = await $axios.$get('/v1/agent/distribution/check'); //
   resp = resp.data
-  console.log(resp);
-  
-  // switch (resp) {
-  //   case '0'://去注册 完善信息
-  //   case '3'://审核失败
-  //     redirect('/register/info');
-  //     break;
-  //   case '1'://审核中
-  //
-  //     break;
-  //   case '2'://审核通过
-  //     redirect('/');
-  //     break;
-  // }
+  switch (resp.status) {
+    case 0://去注册 完善信息
+    case 3://审核失败
+      redirect('/register');
+      break;
+    case 1://审核中
+      redirect('/register');
+      break;
+    case 2://审核通过
+      redirect('/');
+      break;
+  }
   
   
 }
