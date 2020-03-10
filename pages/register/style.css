@@ -24,11 +24,19 @@
 
 .info_container p {
   display: inline-block;
-  color: #cccccc;
   position: relative;
 }
 
-.info_container p span{
+
+.black_color{
+  color: #191919;
+}
+
+.normal_color{
+  color:#cccccc;
+}
+
+.info_container p span {
   width: 0;
   height: 0;
   border: .12rem solid transparent;
@@ -51,7 +59,7 @@
 }
 
 .info_container button {
-  margin-top: 2rem;
+  margin-top: 4rem;
   height: .8rem;
   line-height: .6rem;
   padding: 0 1.15rem;
@@ -59,4 +67,43 @@
   color: white;
   font-size: .32rem;
   font-weight: bold;
+}
+
+.channel_container {
+  position: relative;
+}
+
+.selected {
+  color: #d95338;
+}
+
+.mask{
+  background: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.mask ul {
+  margin-top: .1rem;
+  right: 0.6rem;
+  position: fixed;
+  width: 1.64rem;
+  top: 6.5rem;
+  padding: .2rem 0.3rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.02rem .24rem 0 rgba(171, 171, 171, 0.25);
+  border-radius: .08rem;
+  font-family: PingFang-SC-Light;
+  font-size: .26rem;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0;
+  color: #191919;
+}
+
+.mask ul li {
+  margin-top: .3rem;
 }

@@ -1,9 +1,3 @@
-import Vue from 'vue';
-import {DropdownMenu, DropdownItem} from 'vant';
-import 'vant/lib/index.css';
-
-Vue.use(DropdownMenu);
-Vue.use(DropdownItem);
 export default {
   
   async asyncData({$axios, query, store}) {
@@ -20,9 +14,13 @@ export default {
       realName: '',
       storeName: '',
       contactAddress: '',
-      optionValue: '',
+      showChannel:false,
+      optionValue:
+        {
+          text:'请选择分销渠道',
+          value:''
+        },
       options: [
-        {text: '请选择分销渠道', value: ''},
         {text: '淘宝', value: 'TB'},
         {text: '京东', value: 'JD'},
         {text: '拼多多', value: 'PDD'},
@@ -32,34 +30,42 @@ export default {
   },
   components: {},
   methods: {
-    async submit() {
+    select(option) {
+      this.optionValue = option;
+      this.showChannel = false
+    },
+    async next() {
       if (!this.realName) {
-        return __tostal('请填写真实姓名')
+        return __tostal('请填写真实姓名');
+      }
+      if (!/^[\u4e00-\u9fa5]+$/.test(this.realName)) {
+        return __tostal('请填写正确的姓名');
       }
       if (!this.storeName) {
-        return __tostal('请填写店铺名称')
+        return __tostal('请填写店铺名称');
       }
       if (!this.contactAddress) {
-        return __tostal('请填写联系地址')
+        return __tostal('请填写联系地址');
       }
-      
-      if(!this.optionValue){
-        return __tostal('请选择分销渠道')
+      if (!this.optionValue.value) {
+        return __tostal('请选择分销渠道');
       }
-      let params  ={
+      let params = {
         real_name: this.realName,
         shop_name: this.storeName,
         contact_address: this.contactAddress,
-        channel: this.optionValue
+        channel: this.optionValue.value
       }
-      let resp = await this.$axios.$post(`/v1/agent/distribution`,params);
-      if(resp&&resp.data){ //申请成功
+      let resp = await this.$axios.$post(`/v1/agent/distribution`, params);
+      if (resp && resp.data) { //申请成功
         location.href = '/register/success'
-      }else if(resp.msg){
+      } else if (resp.msg) {
         __tostal(resp.msg)
       }
     }
   },
   mounted() {
+    let anchorContent = this.$refs['anchorContent'];
+    let optionPannel = this.$refs['optionPannel'];
   }
 };
