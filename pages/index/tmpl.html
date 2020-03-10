@@ -1,7 +1,7 @@
 <div>
   <store v-if="active === 'tab_store'"/>
   <category v-if="active === 'tab_category'"/>
-
+  <cart v-if="active === 'tab_cart'"/>
 
   <van-tabbar v-model="active" active-color="#ff3167" inactive-color="#000">
     <van-tabbar-item name="tab_store" :icon="active==='tab_store' ? icon.active : icon.inactive">商城</van-tabbar-item>
