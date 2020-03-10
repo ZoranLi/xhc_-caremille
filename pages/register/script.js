@@ -24,7 +24,7 @@ export default {
         {text: '淘宝', value: 'TB'},
         {text: '京东', value: 'JD'},
         {text: '拼多多', value: 'PDD'},
-        {text: '其他', value: 'OTHER'}
+        {text: '其他', value: 'QT'}
       ],
     }
   },

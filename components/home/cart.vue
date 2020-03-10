@@ -38,6 +38,7 @@
     },
     mounted() {
       this.lazyload = new LazyLoad({selector: 'div[data-src]'})
+      // napi::/goods/${id}/all
     }
   }
 

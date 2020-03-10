@@ -1,0 +1,23 @@
+<div>
+  <van-swipe :class="$style.top_banner" :autoplay="3000" @change="onChange">
+    <van-swipe-item v-for="(item, index) in gallery(2)" :key="index">
+      <img :src="item | optimize('big2x')"/>
+    </van-swipe-item>
+    <div :class="$style.custom_indicator" slot="indicator">
+      <span v-for="(item,index) in gallery(2)" :class="current == index?'':$style.unselected"></span>
+    </div>
+  </van-swipe>
+  <p :class="$style.goods_price">¥<strong>{{goods.g_price_shop}}</strong></p>
+  <p :class="$style.goods_title">{{goods.g_title}}</p>
+  <p :class="$style.goods_name">{{goods.g_name}}</p>
+
+  <div :class="$style.goods_sku">规格</div>
+
+  <div :class="$style.goods_info">
+    <p>商品信息</p>
+    <div style="border-bottom: .2rem solid #f5f5f5" v-if="pageImgs.length">
+      <span v-for="img in pageImgs" v-if="img.img_height && img.img_width" :class="$style.desc_img" :style="{ height: img.img_height*(750/img.img_width) /100 + 'rem'}" :data-src="img.gg_image | optimize('big2x')"></span>
+    </div>
+
+  </div>
+</div>

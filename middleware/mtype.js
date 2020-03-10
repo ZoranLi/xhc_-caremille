@@ -15,20 +15,20 @@ export default async function ({isServer, store, req, query, $axios, redirect}) 
   if (isServer && !req) return
   if (!store.getters.login) redirect('/login') //没登录 去登录
   
-  let resp = await $axios.$get('/v1/agent/distribution/check'); //
-  resp = resp.data
-  switch (resp.status) {
-    case 0://去注册 完善信息
-    case 3://审核失败
-      redirect('/register');
-      break;
-    case 1://审核中
-      redirect('/register');
-      break;
-    case 2://审核通过
-      redirect('/');
-      break;
-  }
+  // let resp = await $axios.$get('/v1/agent/distribution/check'); //
+  // resp = resp.data
+  // switch (resp.status) {
+  //   case 0://去注册 完善信息
+  //   case 3://审核失败
+  //     redirect('/register');
+  //     break;
+  //   case 1://审核中
+  //     redirect('/register');
+  //     break;
+  //   case 2://审核通过
+  //     redirect('/');
+  //     break;
+  // }
   
   
 }
