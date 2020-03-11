@@ -14,8 +14,6 @@
 </style>
 
 <template>
-  <!--<img v-if="active === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg"/>
-       <img v-if="active === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg"/>-->
   <van-tree-select
     height="100vh"
     :items="items"
@@ -23,7 +21,7 @@
     <template slot="content">
       <div class="list_container">
         <ul>
-          <li v-for="(item,index) in goodsList">
+          <li v-for="(item,index) in goodsList" @click="detail(item.g_id)">
             <p>{{item.g_name}}</p>
             <img :src="item.g_image | optimize('small3x')" alt="">
           </li>
@@ -551,6 +549,11 @@
         } else {
           this.goodsList = this.goodsList1
         }
+      }
+    },
+    methods:{
+      detail(id){
+        location.href = `/goods/${id}`
       }
     },
     mounted() {

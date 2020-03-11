@@ -16,7 +16,6 @@ export default {
       title: '珂曼',
       icon: {
         active: '/images/favicon.ico',
-        inactive: '/images/close_gray.png'
       }
     }
   },
@@ -29,6 +28,15 @@ export default {
     store,
     category,
     cart
+  },
+  watch: {
+    anchor(newVal, old) {
+      this.$router.push({
+        query: {
+          tab_index: `${newVal}`
+        }
+      })
+    }
   },
   head() {
     return {

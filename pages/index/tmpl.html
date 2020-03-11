@@ -4,9 +4,9 @@
   <cart v-if="anchor === '2'"/>
 
   <van-tabbar v-model="anchor" active-color="#ff3167" inactive-color="#000">
-    <van-tabbar-item name="0" :icon="anchor==='0' ? icon.active : icon.inactive">商城</van-tabbar-item>
-    <van-tabbar-item name="1" :icon="anchor==='1' ? icon.active : icon.inactive">分类</van-tabbar-item>
-    <van-tabbar-item name="2" :icon="anchor==='2' ? icon.active : icon.inactive">购物袋</van-tabbar-item>
-    <van-tabbar-item name="3" :icon="anchor==='3' ? icon.active : icon.inactive">我的</van-tabbar-item>
+    <van-tabbar-item name="0" :icon="anchor==='0' ? icon.active : '/images/store.png'">商城</van-tabbar-item>
+    <van-tabbar-item name="1" :icon="anchor==='1' ? icon.active : '/images/store.png'">分类</van-tabbar-item>
+    <van-tabbar-item name="2" :icon="anchor==='2' ? icon.active : '/images/cart.png'">购物袋</van-tabbar-item>
+    <van-tabbar-item name="3" :icon="anchor==='3' ? icon.active : '/images/mine.png'">我的</van-tabbar-item>
   </van-tabbar>
 </div>
