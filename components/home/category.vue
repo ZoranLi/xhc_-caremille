@@ -68,7 +68,7 @@
         goodsList: [],
         goodsList1: [{
           "tg_id": 170293,
-          "g_id": 12708,
+          "g_id": 7060,
           "g_name": "MAC 魅可 子弹头口红 #cb96 3g",
           "g_price_shop": 59,
           "origin_g_price_shop": 165,
