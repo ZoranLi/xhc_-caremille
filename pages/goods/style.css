@@ -95,5 +95,58 @@
   background-position: center center;
 }
 
+.goods_info {
+  padding-bottom: 1rem;
+}
+
+.bottom_container {
+  position: fixed;
+  width: stretch;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  height: 1rem;
+  box-shadow: 0 -1px .42rem rgba(66, 68, 69, .1);
+  z-index: 90;
+}
+
+.bottom_container a {
+  position: relative;
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  box-sizing: border-box;
+  margin: auto;
+  vertical-align: middle;
+  background-size: .38rem;
+  font-size: .2rem;
+  text-align: center;
+  padding-top: .5rem;
+  background-repeat: no-repeat;
+  background-position: 50% 37%;
+  color: #000;
+  font-family: PingFangSC-Regular;
+}
+
+.bottom_container .bottom_menu {
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom_container .bottom_menu .menu_store {
+  background-image: url('/images/store.png');
+}
+
+.bottom_container .bottom_menu .menu_mine {
+  background-image: url('/images/mine.png');
+}
+
+.bottom_container .bottom_menu .menu_cart {
+  background-image: url('/images/cart.png');
+}
+
 
 

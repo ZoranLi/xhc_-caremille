@@ -14,11 +14,15 @@ export default {
   data() {
     return {
       title: '珂曼',
-      active: 'tab_store',
       icon: {
         active: '/images/favicon.ico',
         inactive: '/images/close_gray.png'
       }
+    }
+  },
+  asyncData({query}) {
+    return {
+      anchor: query.tab_index || '0'
     }
   },
   components: {

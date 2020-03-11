@@ -2,10 +2,12 @@ import Vue from 'vue';
 import {Swipe, SwipeItem} from 'vant';
 import 'vant/lib/index.css';
 import optimize from '~/filters/imgOptimize'
+
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 
 import LazyLoad from '~/lib/lazyload'
+
 export default {
   validate({params}) {
     return /^\d+$/.test(params.id) //如果商品为非数字
@@ -22,7 +24,7 @@ export default {
       current: 0
     }
   },
-  filters:{
+  filters: {
     optimize
   },
   head() {
@@ -30,7 +32,7 @@ export default {
       title: this.title
     }
   },
-  computed:{
+  computed: {
     pageImgs() {
       if (!this.goods.g_gallery) return ''
       return this.goods.g_gallery
@@ -38,6 +40,9 @@ export default {
     }
   },
   methods: {
+    linkTo(type) {
+      window.location.href =`/?tab_index=${type}`
+    },
     gallery(type) {
       if (!this.goods.g_gallery) return ''
       return this.goods.g_gallery
