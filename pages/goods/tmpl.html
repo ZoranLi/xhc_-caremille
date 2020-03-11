@@ -11,7 +11,7 @@
   <p :class="$style.goods_title">{{goods.g_title}}</p>
   <p :class="$style.goods_name">{{goods.g_name}}</p>
 
-  <div :class="$style.goods_sku" v-if="goods.sku">规格</div>
+  <div :class="$style.goods_sku" v-if="goods.sku" @click="chose_sku">规格</div>
 
   <div :class="$style.goods_info" style="border-bottom: .2rem solid #f5f5f5" v-if="pageImgs.length">
       <span v-for="img in pageImgs"
@@ -21,6 +21,15 @@
             :data-src="img.gg_image | optimize('big2x')">
       </span>
   </div>
+
+  <!-- 多规格 -->
+  <sku v-if="goods.sku"
+       v-show="showSku"
+       :goods="goods"
+       :show="showSku"
+       @update="updateGoodsDetail"
+       @closesku="closesku"
+       @buy_now="buynow"></sku>
 
   <div :class="$style.bottom_container">
     <div :class="$style.bottom_menu"> <!--顺序根据首页角标顺序-->

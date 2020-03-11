@@ -1,0 +1,5 @@
+<div :class="rootClass">
+    <input type="button" value="-" @click="reduce" :class="reduceBool ? '' : style.disabled">
+    <input type="text" v-model="currentCount" readonly>
+    <input type="button" value="+" @click="add" :class="addBool ? '' : style.disabled">
+</div>
